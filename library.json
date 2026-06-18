@@ -1,0 +1,34 @@
+{
+    "name": "Arduino_RPClite",
+    "description": "A MessagePack RPC library for Arduino",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lee-lab-skku/arduino-rpc-lite.git"
+    },
+    "authors": [
+        {
+            "name": "Arduino"
+        },
+        {
+            "name": "Lucio Rossi (eigen-value)"
+        }
+    ],
+    "version": "0.3.1-leelabskku",
+    "license": "MPL-2.0",
+    "frameworks": "arduino",
+    "platforms": "arduinounoq",
+    "dependencies": [
+        {
+            "name": "MsgPack",
+            "version": "https://github.com/lee-lab-skku/arduino-msg-pack/releases/download/v0.4.3-leelabskku/MsgPack.tar.gz"
+        }
+    ],
+    "export": {
+        "include": [
+            "src/**",
+            "library.json",
+            "LICENSE",
+            "README.md"
+        ]
+    }
+}
