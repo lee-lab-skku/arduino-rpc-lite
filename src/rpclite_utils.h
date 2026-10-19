@@ -13,6 +13,10 @@
 #ifndef RPCLITE_UTILS_H
 #define RPCLITE_UTILS_H
 
+#if __cplusplus < 201703L
+#error "This RPClite fork requires C++17 or newer and the standard C++ library"
+#endif
+
 #include <tuple>
 #include <utility>
 

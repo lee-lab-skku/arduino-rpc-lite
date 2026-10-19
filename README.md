@@ -92,4 +92,5 @@ This library is based on the MsgPack library by @hideakitai.
 ## Standard C++ dependency integration
 
 This uses C++17 standard callable deduction and index sequences instead of relying on Arx declarations transitively included by upstream MsgPack.
+C++17 or newer is required; compilation with an older language mode is rejected.
 It is intended to be paired with the dependency-free MsgPack fork.
