@@ -187,7 +187,7 @@ deserialize_tuple(MsgPack::Unpacker& unpacker, std::tuple<Ts...>& out) {
 
 // Helper to invoke a function with a tuple of arguments
 template<typename F, typename Tuple, std::size_t... I>
-auto invoke_with_tuple(F&& f, Tuple&& t, arx::stdx::index_sequence<I...>)
+auto invoke_with_tuple(F&& f, Tuple&& t, std::index_sequence<I...>)
     -> decltype(f(std::get<I>(std::forward<Tuple>(t))...)) {
     return f(std::get<I>(std::forward<Tuple>(t))...);
 }

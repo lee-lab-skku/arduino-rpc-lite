@@ -13,6 +13,8 @@
 #define RPCLITE_WRAPPER_H
 
 #include <string>
+#include <functional>
+#include <utility>
 
 #include "error.h"
 #include "rpclite_utils.h"
@@ -108,7 +110,7 @@ private:
         const int res = deserialize_tuple(unpacker, args);
         if (res<0) return res;
         MsgPack::object::nil_t nil;
-        invoke_with_tuple(_func, args, arx::stdx::make_index_sequence<sizeof...(Args)>{});
+        invoke_with_tuple(_func, args, std::make_index_sequence<sizeof...(Args)>{});
         packer.serialize(nil, nil);
         return 0;
     }
@@ -121,13 +123,13 @@ private:
         const int res = deserialize_tuple(unpacker, args);
         if (res<0) return res;
         MsgPack::object::nil_t nil;
-        R out = invoke_with_tuple(_func, args, arx::stdx::make_index_sequence<sizeof...(Args)>{});
+        R out = invoke_with_tuple(_func, args, std::make_index_sequence<sizeof...(Args)>{});
         packer.serialize(nil, out);
         return 0;
     }
 };
 
-template<typename F, typename Signature = typename arx::function_traits<typename std::decay<F>::type>::function_type>
+template<typename F, typename Signature = decltype(std::function{std::declval<F>()})>
 auto wrap(F&& f) -> RpcFunctionWrapper<Signature>* {
     return new RpcFunctionWrapper<Signature>(std::forward<F>(f));
 };

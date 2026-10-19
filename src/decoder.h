@@ -11,8 +11,6 @@
 #ifndef RPCLITE_DECODER_H
 #define RPCLITE_DECODER_H
 
-// MsgPack log level
-#define DEBUGLOG_DEFAULT_LOG_LEVEL_WARN
 
 #include "MsgPack.h"
 #include "transport.h"

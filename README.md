@@ -2,7 +2,6 @@
 
 A MessagePack RPC library for Arduino allows to create a client/server architecture using MessagePack as the serialization format. It follows the [MessagePack-RPC protocol specification](https://github.com/msgpack-rpc/msgpack-rpc/blob/master/spec.md). It is designed to be lightweight and easy to use, making it suitable for embedded systems and IoT applications.
 
-
 ## Server
 
 ```cpp
@@ -43,7 +42,6 @@ void loop() {
 }
 
 ```
-
 
 ## Client
 
@@ -90,3 +88,8 @@ void loop() {
 ### Credits
 
 This library is based on the MsgPack library by @hideakitai.
+
+## Standard C++ dependency integration
+
+This uses C++17 standard callable deduction and index sequences instead of relying on Arx declarations transitively included by upstream MsgPack.
+It is intended to be paired with the dependency-free MsgPack fork.
