@@ -13,7 +13,7 @@
             "name": "Lucio Rossi (eigen-value)"
         }
     ],
-    "version": "0.3.1-leelabskku",
+    "version": "0.4.0-leelabskku",
     "license": "MPL-2.0",
     "frameworks": "arduino",
     "platforms": "arduinoq",
